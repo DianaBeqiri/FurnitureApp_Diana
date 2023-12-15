@@ -16,4 +16,13 @@ public class SceneLoader : MonoBehaviour
         // Load the specified scene.
         SceneManager.LoadScene(sceneToLoad);
     }
+    public void UiScene()
+    {
+        SceneManager.LoadScene("AssetBundleGamePlay");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("UI");
+    }
 }
