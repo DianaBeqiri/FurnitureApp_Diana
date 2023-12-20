@@ -32,7 +32,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
     private GameObject secondinstantiatedModel; // Reference to the instantiated model
     private GameObject thirdinstantiatedModel; // Reference to the instantiated model
 
-    public Demo demoScript; // Reference to the Demo script
+    //public Demo demoScript; // Reference to the Demo script
     //private bool firstModelInstantiated = false; // Flag to check if the first model has been instantiated
     //private bool secondModelInstantiated = false; // Flag to check if the first model has been instantiated
 
@@ -129,7 +129,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
             
 
             // Access the MeshRenderer component on the child object recursively
-            MeshRenderer meshRenderer = FindMeshRendererInDeepHierarchy(instantiatedModel);
+            /*MeshRenderer meshRenderer = FindMeshRendererInDeepHierarchy(instantiatedModel);
             if (meshRenderer != null)
             {
                 Debug.Log("MeshRenderer component found in deep hierarchy.");
@@ -153,7 +153,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
             {
                 Debug.LogWarning("MeshRenderer component not found in deep hierarchy.");
             }
-
+*/
         }
         else
         {
@@ -161,7 +161,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
         }
     }
 
-    private void UpdateModelColor()
+    /*private void UpdateModelColor()
     {
         if (instantiatedModel != null && demoScript != null)
         {
@@ -185,7 +185,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
                 Debug.LogError("Invalid color string: " + demoScript.colorString);
             }
         }
-    }
+    }*/
     private MeshRenderer FindMeshRendererInDeepHierarchy(GameObject obj)
     {
         MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
@@ -215,7 +215,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
         Load.transform.rotation = indicator.transform.rotation;
     }
 
-    private void UpdateModelColor2()
+    /*private void UpdateModelColor2()
     {
         if (secondinstantiatedModel != null && demoScript != null)
         {
@@ -239,7 +239,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
                 Debug.LogError("Invalid color string: " + demoScript.colorString1);
             }
         }
-    }
+    }*/
 
     // Update is called once per frame
     private IEnumerator Sofa2()
@@ -288,7 +288,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
             
 
             // Access the MeshRenderer component on the child object recursively
-            MeshRenderer meshRenderer = FindMeshRendererInDeepHierarchy(secondinstantiatedModel);
+            /*MeshRenderer meshRenderer = FindMeshRendererInDeepHierarchy(secondinstantiatedModel);
             if (meshRenderer != null)
             {
                 Debug.Log("MeshRenderer component found in deep hierarchy.");
@@ -311,7 +311,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
             else
             {
                 Debug.LogWarning("MeshRenderer component not found in deep hierarchy.");
-            }
+            }*/
         }
         else
         {
@@ -357,7 +357,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
         UseObject(go3);
     }
 
-    private void UpdateModelColor3()
+    /*private void UpdateModelColor3()
     {
         if (thirdinstantiatedModel != null && demoScript != null)
         {
@@ -381,7 +381,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
                 Debug.LogError("Invalid color string: " + demoScript.colorString2);
             }
         }
-    }
+    }*/
 
     private void InstantiateGameObjectFromAssetBundle3(GameObject go3)
     {
@@ -397,7 +397,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
 
 
             // Access the MeshRenderer component on the child object recursively
-            MeshRenderer meshRenderer = FindMeshRendererInDeepHierarchy(thirdinstantiatedModel);
+            /*MeshRenderer meshRenderer = FindMeshRendererInDeepHierarchy(thirdinstantiatedModel);
             if (meshRenderer != null)
             {
                 Debug.Log("MeshRenderer component found in deep hierarchy.");
@@ -420,7 +420,7 @@ public class DownloadAssetBundleSimplifyWay : MonoBehaviour
             else
             {
                 Debug.LogWarning("MeshRenderer component not found in deep hierarchy.");
-            }
+            }*/
         }
         else
         {

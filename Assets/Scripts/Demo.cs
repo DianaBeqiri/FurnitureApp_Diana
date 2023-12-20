@@ -18,7 +18,7 @@ public static class ButtonExtension
 
 public class Demo : MonoBehaviour
 {
-    [Serializable]
+    /*[Serializable]
     public struct Game
     {
         public string name;
@@ -26,9 +26,9 @@ public class Demo : MonoBehaviour
         public string link;
         public string color;
 
-    }
+    }*/
 
-    public TextMeshProUGUI NameText;        // Assign this in the Inspector
+    /*public TextMeshProUGUI NameText;        // Assign this in the Inspector
     public TextMeshProUGUI DescriptionText; // Assign this in the Inspector
     //public TextMeshProUGUI LinkText;        // Assign this in the Inspector
     public TextMeshProUGUI AdditionalNameText; // Assign this in the Inspector
@@ -41,28 +41,28 @@ public class Demo : MonoBehaviour
     public GameObject gb1;
     public GameObject gb2;
     public DownloadAssetBundleSimplifyWay downloadScript; // Reference to the other script
-
+*/
     public Material targetMaterial; // Reference to the Material you want to change
 
     public string colorString = "";
     public string colorString1 = "";
     public string colorString2 = "";
 
-    Game[] allGames;
+    //Game[] allGames;
 
     void Start()
     {
         // Fetch data from Json
-        StartCoroutine(GetGames());
+        //StartCoroutine(GetGames());
 
-        InvokeRepeating("FetchDataPeriodically", 0, 5); // Change 5 to your desired interval in seconds.
+        InvokeRepeating("changeColor", 0, 5); // Change 5 to your desired interval in seconds.
 
     }
 
-    void FetchDataPeriodically()
+    /*void FetchDataPeriodically()
     {
         StartCoroutine(GetGames());
-    }
+    }*/
 
     void changeColor(string newColorString)
     {
@@ -98,7 +98,7 @@ public class Demo : MonoBehaviour
         }
     }
 
-    void DrawUI()
+    /*void DrawUI()
     {
         int N = allGames.Length;
 
@@ -192,6 +192,6 @@ public class Demo : MonoBehaviour
                 DrawUI();
             }
         }
-    }
+    }*/
 
 }

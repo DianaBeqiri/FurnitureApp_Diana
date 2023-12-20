@@ -5,7 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     public string sceneToLoad; // The name of the scene you want to load.
 
-    void Start()
+    /*void Start()
     {
         // Invoke the LoadScene method after 3 seconds (adjust the time delay as needed).
         Invoke("LoadScene", 4f);
@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
     {
         // Load the specified scene.
         SceneManager.LoadScene(sceneToLoad);
-    }
+    }*/
     public void UiScene()
     {
         SceneManager.LoadScene("AssetBundleGamePlay");

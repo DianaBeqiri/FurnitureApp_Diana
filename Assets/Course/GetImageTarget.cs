@@ -14,13 +14,12 @@ namespace Assets.Course
 {
     public class GetImageTarget : MonoBehaviour
     {
-        public string baseUrl = "http://localhost:3005/imagetargets";
+        public string baseUrl = "https://e582-84-22-36-74.ngrok-free.app/imagetargets";
         public LoadModelFromURLSample load;
         private GameObject imgTargetCard;
         public GameObject detailsPanel;
         public TextMeshProUGUI detailsDescription;
         public RawImage detailsImage;
-
         public GameObject imgTargetCardPrefab;
 
         public Transform contentPanel;
@@ -58,8 +57,9 @@ namespace Assets.Course
                 imgTarget.description.text = allImageTargets.data[i].description;
                 imgTarget.model_url.text = allImageTargets.data[i].model_url;
 
-                load.ModelURL = imgTarget.model_url.text;
-                Debug.Log(load.ModelURL);
+                /*load.ModelURL = imgTarget.model_url.text;
+                Debug.Log(load.ModelURL);*/
+                
 
                 StartCoroutine(GetTexture(allImageTargets.data[i].image_url, tex =>
                 {
@@ -73,6 +73,7 @@ namespace Assets.Course
                     () =>
                     {
                         imageTargetDetails(newIndex, allImageTargets);
+                        
                     });
                 index++;
             }
@@ -83,11 +84,15 @@ namespace Assets.Course
             detailsPanel.SetActive(true);
             detailsDescription.text = imgTargetObject.data[index].name;
 
+            // Pass color information to LoadModelFromURLSample script
+            load.SetModelDetails(imgTargetObject.data[index].model_url, imgTargetObject.data[index].color);
+
             StartCoroutine(GetTexture(imgTargetObject.data[index].image_url, tex =>
             {
                 detailsImage.texture = tex;
             }));
         }
+
 
         IEnumerator GetTexture(string url, System.Action<Texture> callback)
         {

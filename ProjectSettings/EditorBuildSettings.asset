@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: 8b7496c038444734a8c3f2da703eff5d
+  - enabled: 1
+    path: Assets/Scenes/AssetBundleGamePlay.unity
+    guid: 9c01f362b9baab440adc5dc9b7c1a56b
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
