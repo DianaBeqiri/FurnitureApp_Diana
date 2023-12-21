@@ -14,7 +14,7 @@ namespace Assets.Course
 {
     public class GetImageTarget : MonoBehaviour
     {
-        public string baseUrl = "https://e582-84-22-36-74.ngrok-free.app/imagetargets";
+        public string baseUrl = "https://27a7-84-22-36-74.ngrok-free.app/imagetargets";
         public LoadModelFromURLSample load;
         private GameObject imgTargetCard;
         public GameObject detailsPanel;
@@ -32,10 +32,24 @@ namespace Assets.Course
                 Value = "application/json"
             };
 
-            StartCoroutine(RestApiClient.Instance.HttpGet(baseUrl, (r) => OnRequestCompleted(r)));
+            StartCoroutine(UpdateDataRoutine());
+        }
+
+        private IEnumerator UpdateDataRoutine()
+        {
+            while (true)
+            {
+                // Make the HTTP request to fetch data
+                StartCoroutine(RestApiClient.Instance.HttpGet(baseUrl, (r) => OnRequestCompleted(r)));
+
+                // Wait for 3 seconds before making the next request
+                yield return new WaitForSeconds(3f);
+            }
         }
         void OnRequestCompleted(Response response)
         {
+            // Clear existing data before updating
+            ClearExistingData();
             Debug.Log("Status Code :" + response.StatusCode);
             Debug.Log("Data : " + response.Data);
             Debug.Log("Error : " + response.Error);
@@ -76,6 +90,15 @@ namespace Assets.Course
                         
                     });
                 index++;
+            }
+        }
+
+        private void ClearExistingData()
+        {
+            // Destroy existing instantiated prefabs
+            foreach (Transform child in contentPanel.transform)
+            {
+                Destroy(child.gameObject);
             }
         }
 
