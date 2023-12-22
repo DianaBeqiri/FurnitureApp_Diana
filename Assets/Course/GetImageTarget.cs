@@ -14,7 +14,7 @@ namespace Assets.Course
 {
     public class GetImageTarget : MonoBehaviour
     {
-        public string baseUrl = "https://edde-84-22-36-74.ngrok-free.app/imagetargets";
+        public string baseUrl = "https://8c3e-84-22-36-74.ngrok-free.app/imagetargets";
         public LoadModelFromURLSample load;
         private GameObject imgTargetCard;
         public GameObject detailsPanel;

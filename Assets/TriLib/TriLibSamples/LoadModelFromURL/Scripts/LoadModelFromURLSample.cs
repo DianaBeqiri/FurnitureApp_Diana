@@ -116,7 +116,7 @@ namespace TriLibCore.Samples
         {
             Debug.Log("Materials loaded. Model fully loaded.");
             // Deactivate the indicator when materials are loaded
-            indicator.gameObject.SetActive(false);
+            //indicator.gameObject.SetActive(false);
 
             // Set the loaded model to active
             //assetLoaderContext.RootGameObject.SetActive(true);
@@ -197,7 +197,14 @@ namespace TriLibCore.Samples
         {
             if (loadingProgressText != null)
             {
-                loadingProgressText.text = $"Downloading Model {progress:P}";
+                if (progress < 1.0f)
+                {
+                    loadingProgressText.text = $"Downloading Model {progress:P}";
+                }
+                else
+                {
+                    loadingProgressText.text = "Download Model";
+                }
             }
         }
     }
