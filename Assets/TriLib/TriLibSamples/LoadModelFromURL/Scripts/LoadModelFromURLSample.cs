@@ -16,7 +16,7 @@ namespace TriLibCore.Samples
     /// </summary>
     public class LoadModelFromURLSample : MonoBehaviour
     {
-        public string ModelURL = "https://ricardoreis.net/trilib/demos/sample/TriLibSampleModel.zip";
+        public string ModelURL = "https://8f53-84-22-36-74.ngrok-free.app/imagetargets";
         public Transform indicator;
         private ARRaycastManager aRRaycastManager;
         private Pose PlacementPose;
@@ -171,10 +171,10 @@ namespace TriLibCore.Samples
             Invoke("DeactivateProgresiveText", 1f);
 
             // Attach LeanTouch script to enable touch gestures
-            AttachLeanTouchScripts(assetLoaderContext.RootGameObject);
+            //AttachLeanTouchScripts(assetLoaderContext.RootGameObject);
         }
 
-        private void AttachLeanTouchScripts(GameObject loadedModel)
+        /*private void AttachLeanTouchScripts(GameObject loadedModel)
         {
             // Attach Lean Drag Translate script
             LeanTouch leanDragTranslate = loadedModel.AddComponent<LeanTouch>();
@@ -185,8 +185,10 @@ namespace TriLibCore.Samples
             // Attach Lean Twist Rotate Axis script
             LeanTwistRotateAxis leanTwistRotateAxis = loadedModel.AddComponent<LeanTwistRotateAxis>();
 
+            
+
             // You may need to configure additional properties based on the Lean Touch documentation
-        }
+        }*/
 
         private void DeactivateProgresiveText()
         {
